@@ -4,7 +4,7 @@ public interface TodoListService {
 
     void showTodoList();
 
-    void data(String todo);
+    void addTodoList(String todo);
 
     void removeTodoList(Integer number);
 

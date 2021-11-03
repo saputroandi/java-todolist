@@ -27,12 +27,20 @@ public class TodoListServiceImpl implements TodoListService{
     }
 
     @Override
-    public void data(String todo) {
+    public void addTodoList(String todo) {
+        TodoList todoList = new TodoList(todo);
 
+        todoListRepository.add(todoList);
     }
 
     @Override
     public void removeTodoList(Integer number) {
+        boolean success = todoListRepository.remove(number);
 
+        if(success) {
+            System.out.println("berhasil menghapus todo: " + number);
+        } else {
+            System.out.println("gagal menghapus todo: " + number);
+        }
     }
 }
